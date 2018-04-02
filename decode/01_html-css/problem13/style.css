@@ -1,0 +1,20 @@
+.smol{
+    height: 100px;
+
+}
+
+.container {
+    display: flex;
+    margin: 10px;
+    text-align: center;
+}
+
+.col{
+    padding: 10px;
+    border-style: dotted;
+    margin: 30px;
+}
+
+.section{
+    margin-left: 30px;
+}

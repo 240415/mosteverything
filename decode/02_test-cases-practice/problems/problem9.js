@@ -12,7 +12,7 @@ let inputs = [
 let outputs = [
   "world",
   "parked",
-  undefined,
+  "",
   "phone",
   "ten"
 ]
@@ -24,9 +24,7 @@ If multiple words have the same length, return the last one that matches.
 function f(str) {
     var newArray = str.split(" ");
     var longestWord = "";
-    if(str === ""){
-        return undefined;
-    }
+    
     for(var i = 0; i < newArray.length; i++){
         if(newArray[i].length >= longestWord.length){
             longestWord = newArray[i];

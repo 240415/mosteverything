@@ -2,11 +2,19 @@ var assert = require('assert');
 
 // we need 5 test cases. 
 let inputs = [
-  
+  "hello jay",
+  "DRINK water",
+  "tree in the field",
+  "phone call",
+  "jasxc fdkms"
 ]
 
 let outputs = [
-  
+  "Hello Jay",
+  "Drink Water",
+  "Tree In The Field",
+  "Phone Call",
+  "Jasxc Fdkms"
 ]
 
 /*
@@ -17,9 +25,12 @@ f("ALL YOUR BASE ARE BELONG"); // All Your Base Are Belong
 
 */
 function f(str) {
-    
+    var min = str.toLowerCase();
+    var newArray = min.split(" ");
+    for(i = 0; i < newArray.length; i++){
+         newArray[i] = newArray[i].charAt(0).toUpperCase() + newArray[i].substr(1);
+    } return newArray.join(" ");
 }
-
 function runTest(i) {
     if(i > inputs.length) throw new Error("You do not have enough test cases");
     var expected = outputs[i];

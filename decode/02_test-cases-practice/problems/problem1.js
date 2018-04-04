@@ -2,16 +2,24 @@ var assert = require('assert');
 
 // we need 5 test cases. I provided 1 input
 let inputs = [
-  ""
+  "",
+  "abc",
+  "bca",
+  "def",
+  "k"
 ]
 
 let outputs = [
-  
+  undefined,
+  "a",
+  "b",
+  "d",
+  "k"
 ]
 
 // Make this function return the first letter of the string that is passed to it. If the string does not have a first letter, return undefined
 function f(str) {
-    
+    return str[0];
 }
 
 function runTest(i) {

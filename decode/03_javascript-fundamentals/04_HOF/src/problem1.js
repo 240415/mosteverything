@@ -7,6 +7,11 @@ function callNoException(f, arg) {
     //     if(x==0) throw new Error("woops");
     //     return x;
     //  }
+    try{
+        return f(arg);
+    } catch(err){
+        return null;
+    };
     //  callNoException(throwsZero, 0) returns null
     //  callNoException(throwsZero, 12) returns 12
 }
@@ -19,6 +24,12 @@ function callNoNull(f, arg) {
     //     if(x==0) return null;
     //     return x;
     //  }
+ 
+    if(f(arg) === null) {
+        throw new Error("Whoops");
+    } else {
+        return f(arg);
+    }
     // callNoNull(nullZero, 0) throws an exception
     // callNoNull(nullZero, 12) returns 12
     
@@ -36,6 +47,15 @@ function exceptionalize(f) {
     //     if(x==0) return null;
     //     return x;
     //  }
+    function g(arg){
+        if(f(arg) === null){
+            throw new Error("WhooHoo");
+        } else {
+            return f(arg);
+        }
+    }
+    return g
+
     // exceptionalize(nullZero) returns a function g such that
     // g(0) throws an exception
     // g(12) returns 12
@@ -52,6 +72,14 @@ function nullify(f) {
     //     if(x==0) throw new Error("woops");
     //     return x;
     //  }
+    function g(arg){
+        try{
+            return f(arg);
+        } catch (err){
+            return null
+        }
+    }
+    return g;
     //  nullify(throwsZero) returns a function g such that
     //  g(0) returns null
     //  g(12) throws an exception
@@ -67,6 +95,11 @@ function map(lst, f) {
     //
     // Example
     //
+    var newArray = [];
+    for(var i = 0; i < lst.length; i++){
+        newArray.push(f(lst[i]));
+    };
+    return newArray;
     // function toUpperCase(str) { return str.toUpperCase(); }
     // map(["bob", "susie"], toUpperCase) returns ["BOB", "SUSIE"]
 }
@@ -80,6 +113,13 @@ function filter(lst, f) {
     //     x is an element of lst
     //     f(x) is true  
     //   
+    var newArray = [];
+    for(var i = 0; i < lst.length; i++){
+        if(f(lst[i]) === true){
+            newArray.push(lst[i]);   
+        }
+    };
+    return newArray;
     // Example:
     // function isEven(x) {return x % 2 == 0;}
     // filter([1, 2, 3, 4, 5], isEven) returns [2,4];   
@@ -89,7 +129,14 @@ function every(lst, f) {
     // lst is an array and f is a function
     // f takes 1 arguments and returns a boolean
     // filter(lst, f) returns a true if f returns true for every element of lst
-    
+
+    for(var i = 0; i < lst.length; i++){
+        if(f(lst[i]) === false){
+            return false;
+        }
+    }; 
+    return true
+
     // Example
     // every([2,4,12], x => x % 2 == 0) returns true
     // every([2,3,12], x => x % 2 == 0) returns false    

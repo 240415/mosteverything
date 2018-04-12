@@ -1,9 +1,22 @@
-function makeTeacher(n) {
-    return {name: n, hoursTaught: 0};
+// function makeTeacher(n) {
+//     return {name: n, hoursTaught: 0};
+// }
+class MakeTeacher{
+    constructor(n){
+        this.name = n;
+        this.hoursTaught = 0;
+    }
 }
 
 function makeStudent(n, we) {
     return {name: n, fundamentalsProficiency: 0, workEthic: we};
+}
+class MakeStudent{
+    constructor(n, we){
+        this.name = n;
+        this.fundamentalsProficiency = 0;
+        this.workEthic = we;
+    }
 }
 
 function teach(teacher, student) {
@@ -31,9 +44,9 @@ function study(student) {
     student.fundamentalsProficiency = student.fundamentalsProficiency + student.workEthic;
 }
 
-var jack = makeTeacher("jack");
-var bob = makeStudent("bob", 10);
-var susan = makeStudent("susan", 12);
+var jack = new MakeTeacher("jack");
+var bob = new MakeStudent("bob", 10);
+var susan = new MakeStudent("susan", 12);
 teach(jack, bob);
 teach(jack, susan);
 doProject(bob);

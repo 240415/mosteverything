@@ -18,6 +18,19 @@ class div {
         return ret;
     }
 }
+class ul{
+    constructor(arr){
+        this.arr = arr;
+    }
+    render() {
+        var ret = document.createElement("ul");
+        for (var i = 0; i < this.arr.length; i++){
+            ret.appendChild(this.arr[i].render());
+        }
+        return ret;
+    }
+    
+}
 
 class h1 {
     constructor(text) {
@@ -26,6 +39,16 @@ class h1 {
     render() {
         var ret = document.createElement("h1");
         ret.innerText = this.text;
+        return ret;
+    }
+}
+class li{
+    constructor(text){
+        this.text = text;
+    }
+    render(){
+        var ret = document.createElement("li");
+        ret.innerHTML = this.text;
         return ret;
     }
 }

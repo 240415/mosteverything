@@ -11,3 +11,26 @@ class Shape {
           this.area() + " and perimeter " + this.perimeter();
     }
 }
+
+class Rectangle extends Shape{
+    constructor(len, hei){
+        super("rectangle");
+        this.size = size
+    }
+    area(){
+        this.size * this.size
+    }
+    perimeter(){
+        this.size * 4
+    }
+}
+
+class LengthAndHeigth extends Rectangle{
+    constructor(len, hei){
+        super(4);
+        this.length = len
+        this.height = hei
+    }
+}
+var s = new LengthAndHeigth(4, 2);
+console.log(s.toString());

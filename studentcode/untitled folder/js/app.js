@@ -33,6 +33,9 @@ class Player {
     moveLeft() {
         this.px = this.px + speed;
     }
+    moveRight() {
+        this.px = this.px - speed;
+    }
     draw() {
         
          c.strokeStyle = "#FF0000";
@@ -108,27 +111,29 @@ function animate() {
     requestAnimationFrame(animate);
     c.clearRect(0, 0, innerWidth, innerHeight);
     player.draw();
+    if(keys.left){
+        Player.moveLeft();
+    }
     for (let i = 0; i < circleArray.length; i++) {
         circleArray[i].update();
     }
 };
+
 document.addEventListener('keydown', e => {
     if (e.keyCode === LEFT_ARROW_CODE) {
-        // this.player.move(MOVE_LEFT);
-       player.moveLeft()
+       keys.left = true;
 
     }
     else if (e.keyCode === RIGHT_ARROW_CODE) {
-        // this.player.move(MOVE_RIGHT);
-        KEYS.right = true;
+        keys.right = true;
     }
 });
 document.addEventListener('keyup', e => {
     if (e.keyCode === LEFT_ARROW_CODE) {
-        KEYS.left = false;
+        keys.left = false;
     }
     else if (e.keyCode === RIGHT_ARROW_CODE) {
-        KEYS.right = false;
+        keys.right = false;
     }
 });
 animate();

@@ -1,0 +1,94 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+.backStart{
+    position: absolute;
+    top: 25vh;
+    width: 20vw;
+    left: 40vw;
+    background-color: orange;
+    border: 5px solid black;
+}
+.butStart{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    text-align: 'center';
+    height: 20vh;
+    width: 10vw;
+    margin-left: 5vw;
+    border: none;
+    background-color: inherit;
+
+}
+
+.background { 
+    background-image: url("background.png");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#fighters > img{
+    height: 150px;
+    position: absolute;
+    top: 57vh;
+}
+
+#luigi{
+    left: 20vw;
+    transition: transform 0.4s ease-in-out;
+}
+
+#mario{
+    right: 20vw;
+    transition: transform 0.4s ease-in-out;
+}
+
+.jumpLuigi{
+    transform: translate(90px, -90px);
+}
+
+.jumpMario{
+    transform: translate(-90px, -90px);
+}
+
+#winMessage{
+    text-align: center;
+    padding-top: 50px;
+    font-family: 'Press Start 2P', cursive;
+    color: #fff;
+}
+#readySetFight {
+    text-align: center;
+    padding-top: 53px;
+    font-family: 'Press Start 2P', cursive;
+    color: red;
+}
+
+#reset{
+    text-align: center;
+}
+
+#reset > button{
+    background: #FF9800;
+    border: 2px solid white;
+    padding: 30px 40px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#scores {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 35px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#scoreBoxMario {
+    text-align: right;
+}

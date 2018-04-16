@@ -1,6 +1,5 @@
 var btn = document.getElementById("btn");
 var body = document.getElementsByTagName("body")[0];
-var start = document.getElementById("message");
 var reset = document.getElementById("reset");
 var fiveButtons = document.getElementById("game");
 function random(min, max) {
@@ -35,6 +34,11 @@ function beginGame(e) {
 
     setTimeout(function () {
         let buttonArr = [];
+        function checkDone() {
+            return buttonArr.every(function (x) {
+                return x.style.display === 'none'
+            })
+        }
         for (i = 0; i < 5; i++) {
             let buttons = document.createElement("button");
             buttons.innerHTML = "Click!"
@@ -42,24 +46,26 @@ function beginGame(e) {
             buttons.onclick = function (e) {
                 e.stopPropagation();
                 buttons.style.display = 'none';
+                if(checkDone()){
+                    eventClick();
+                }
             }
             buttonArr.push(buttons);
         }
-        function checkDone() {
-            return buttonArr.every(function (x) {
-                return x.style.display === 'none'
-            })
-        }
-
         body.addEventListener("click", function bodyClick() {
-            alert("Game Over");
-            ret = true;
-            body.removeEventListener("click", bodyClick);
+            if (!ret) {
+                alert("Game Over");
+                ret = true;
+                body.removeEventListener("click", bodyClick);
+                fiveButtons.style.display = "none";
+                resetFunction();
+            }
         });
         setTimeout(() => {
             if (!ret) {
                 alert("You lost");
                 ret = true;
+                fiveButtons.style.display = "none";
                 resetFunction();
             }
         }, 3000);

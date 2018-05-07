@@ -1,0 +1,21 @@
+html, body, #root{
+    height: 100%;
+}
+@font-face {
+    font-family: "digital-font";
+    src: url('./ds_digital/DS-DIGIB.TTF');
+}
+.clock{
+    font-family: "digital-font";
+    background-color: #a7b77b;
+    font-size: 80px;
+    color: #42443b;
+    border: 5px solid black;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#root{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

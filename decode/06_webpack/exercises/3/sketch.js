@@ -1,4 +1,5 @@
 import p5 from 'p5';
+import setup from './setup.js';
 import renderWave from './renderwave.js';
 
 
@@ -27,4 +28,4 @@ const sketch = (p5) => {
         renderWave(p5, yvalues, xspacing);
     }
 }
-
+export default sketch;

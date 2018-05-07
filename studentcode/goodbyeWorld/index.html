@@ -1,0 +1,229 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        class Foo extends React.Component {
+            constructor() {
+                super();
+                this.state = {
+                    date: new Date(),
+                    hours: "",
+                    minutes: "",
+                    seconds: "",
+                };
+                this.inc = setInterval(() => {
+                    var tempHours = this.state.date.getHours()
+                    var tempMinutes = this.state.date.getMinutes()
+                    var tempSeconds = this.state.date.getSeconds()
+                    if (tempHours < 10) {
+                        tempHours = "0" + tempHours;
+                    }
+                    if (tempMinutes < 10) {
+                        tempMinutes = "0" + tempMinutes;
+                    }
+                    if (tempSeconds < 10) {
+                        tempSeconds = "0" + tempSeconds;
+                    }
+
+                    this.setState(
+                        {
+                            date: new Date(),
+                            hours: tempHours,
+                            minutes: tempMinutes,
+                            seconds: tempSeconds,
+                        }), 1000
+                })
+            }
+            timer(){
+                    var tempHours = this.state.date.getHours()
+                    var tempMinutes = this.state.date.getMinutes()
+                    var tempSeconds = this.state.date.getSeconds()
+                    if (tempHours < 10) {
+                        tempHours = "0" + tempHours;
+                    }
+                    if (tempMinutes < 10) {
+                        tempMinutes = "0" + tempMinutes;
+                    }
+                    if (tempSeconds < 10) {
+                        tempSeconds = "0" + tempSeconds;
+                    }
+                    this.setState(
+                        {
+                            date: new Date(),
+                            hours: tempHours,
+                            minutes: tempMinutes,
+                            seconds: tempSeconds,
+                        })
+                }
+            render() {
+                return React.createElement("div", null, React.createElement("div", { className: "clock" }, this.state.hours + ":" + this.state.minutes + ":" + this.state.seconds), 
+                React.createElement("button", {onClick: () => {clearInterval(this.inc); this.setState({ hours: 0, minutes: 0, seconds: 0 });}}, "Timer"));
+            };
+        }
+        let divRoot = document.getElementById("root");
+        ReactDOM.render(React.createElement(Foo, null), divRoot);
+
+        
+        
+
+        // let quotes = [
+        //     "My theory on life is that life is beautiful. Life doesn't change. You have a day, and a night, and a month, and a year. We people change - we can be miserable or we can be happy. It's what you make of your life.",
+        //     "A man who has never made a woman angry is a failure in life.",
+        //     "Mohammed bin Rashid Al Maktoum Change, Year, Miserable A man who has never made a woman angry is a failure in life. Christopher Morley Anger, Woman, Never Too often we underestimate the power of a touch, a smile, a kind word, a listening ear, an honest compliment, or the smallest act of caring, all of which have the potential to turn a life around.",
+        //     "If you love life, don't waste time, for time is what life is made up of.",
+        //     "Let your life lightly dance on the edges of Time like dew on the tip of a leaf." 
+        // ];
+        // class Foo extends React.Component {
+        //     constructor(){
+        //         super();
+        //         this.state = {randomNumber: 0}
+        //     }
+        //     render(){
+        //         return React.createElement("div", null, React.createElement("div", null, quotes[this.state.randomNumber]),
+        //         React.createElement("button", {onClick: () => this.setState({randomNumber: Math.floor(Math.random() * 5)})}, "Get random Quote" ));
+        //     }
+        // }
+        // let divRoot = document.getElementById("root");
+        // ReactDOM.render(React.createElement(Foo, null), divRoot);
+
+
+
+        // class Foo extends React.Component {
+        //     constructor(){
+        //         super();
+        //         this.state = {randomNumber: 0}
+        //     }
+        //     render(){
+        //         return React.createElement("div", null, React.createElement("div", null, this.state.randomNumber), 
+        //         React.createElement("button", {onClick: () => this.setState({randomNumber: Math.floor((Math.random() * 100) + 1)})}, "Random Number Generator"));
+
+        //     }
+        // }
+        // let divRoot = document.getElementById("root");
+        // ReactDOM.render(React.createElement(Foo, null), divRoot);
+
+
+
+
+
+
+        // class Foo extends React.Component {
+        //     constructor() {
+        //         super();
+        //         this.state = { counter: 0 };
+        //     }
+        //     render() {
+        //         return React.createElement("div", null, this.state.counter,
+        //             React.createElement("button", { onClick: () => this.setState({ counter: this.state.counter + 1 }) }, "Add 1"),
+        //             React.createElement("button", { onClick: () => this.setState({ counter: 0 }) }, "Reset Counter"));
+        //     }
+        // }
+        // let divRoot = document.getElementById("root");
+        // ReactDOM.render(React.createElement(Foo, null), divRoot);
+
+
+
+
+        // class Foo extends React.Component{
+        //     constructor(){
+        //         super();
+        //         this.state = {counter: 0};
+        //     }
+        //     render(){
+        //         return React.createElement("button", { onClick: () => this.setState({counter: this.state.counter + 1})}, this.state.counter + " times");
+        //     }
+        // }
+        // let divRoot = document.getElementById("root");
+        // ReactDOM.render(React.createElement(Foo, null), divRoot);
+
+
+        // let rootdiv = document.getElementById("root");
+        // let divA = React.createElement("div", null,);
+        // let  a = React.createElement("a", {href: "google.com"}, "Press Here", divA);
+        // let divI = React.createElement("div", null);
+        // let img = React.createElement("img", {src: "https://www.cesarsway.com/sites/newcesarsway/files/styles/large_article_preview/public/All-about-puppies--Cesar%E2%80%99s-tips%2C-tricks-and-advice.jpg?itok=bi9xUvwe", divI})
+        // let arr = [a, img];
+        // ReactDOM.render(arr, rootdiv);
+    </script>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        class Foo extends React.Component {
+            constructor() {
+                super();
+                this.state = {
+                    date: new Date(),
+                    hours: "",
+                    minutes: "",
+                    seconds: "",
+                    mode: "clock"
+                };
+                this.startTimer();
+            }
+            startTimer() {
+                this.inc = setInterval(() => {
+                    // if (this.state.mode === "clock") {
+                    //     this.setState({ date: new Date() });
+                    // } else {
+                        this.setState({ date: new Date(), seconds: this.state.seconds + 1 });
+                    // }
+                }, 1000)
+            }
+            display() {
+                if (this.state.mode === "timer"){
+                    var minutes = Math.floor(this.state.seconds / 60);
+                    var hours = Math.floor(minutes / 60);
+                    var timer = React.createElement('div', null, hours + ":" + minutes + ":" + this.state.seconds);
+                    var startBtn = React.createElement('button', { onClick: () => {}}, "start");
+                    var stopBtn = React.createElement('button', { onClick: () => {}}, "stop");
+                    return React.createElement('div', null, timer, startBtn, stopBtn);;
+                } 
+                var tempHours = this.state.date.getHours()
+                var tempMinutes = this.state.date.getMinutes()
+                var tempSeconds = this.state.date.getSeconds()
+                if (tempHours < 10) {
+                    tempHours = "0" + tempHours;
+                }
+                if (tempMinutes < 10) {
+                    tempMinutes = "0" + tempMinutes;
+                }
+                if (tempSeconds < 10) {
+                    tempSeconds = "0" + tempSeconds;
+                }
+                return tempHours + ":" + tempMinutes + ":" + tempSeconds;
+            }
+            render() {
+                return React.createElement("div", null, React.createElement("div", { className: "clock" }, this.display()),
+                    React.createElement("button", {
+                        onClick: () => {
+
+                            clearInterval(this.inc);
+                            this.startTimer();
+                            this.setState({ hours: 0, minutes: 0, seconds: 0, mode: this.state.mode === "clock" ? "timer" : "clock"});
+                        }
+                    },
+                        "Timer"));
+            };
+        }
+        let divRoot = document.getElementById("root");
+        ReactDOM.render(React.createElement(Foo, null), divRoot);
+    </script>
+</body>
